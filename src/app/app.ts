@@ -1,11 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ThemeService } from './theme.service';
 
 @Component({
-  imports: [],
   selector: 'app-root',
-  styleUrl: './app.scss',
   templateUrl: './app.html',
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('portfolio');
+  protected readonly themeService = inject(ThemeService);
 }

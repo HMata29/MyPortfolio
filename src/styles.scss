@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --bg: #F8FAFC;
+  --text: #0F172A;
+  --text-2: #334155;
+  --muted: #475569;
+  --card: #FFFFFF;
+  --border: #E2E8F0;
+  --chip: #E2E8F0;
+  --accent: #2563EB;
+  --on-accent: #FFFFFF;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #0B1220;
+  --text: #E2E8F0;
+  --text-2: #CBD5E1;
+  --muted: #94A3B8;
+  --card: #111A2E;
+  --border: #1E293B;
+  --chip: #1E293B;
+  --accent: #60A5FA;
+  --on-accent: #0B1220;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 { margin: 0; font-family: 'Space Grotesk', sans-serif; }
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
