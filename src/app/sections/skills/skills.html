@@ -1,0 +1,24 @@
+
+<section id="skills" class="container section">
+  <p class="eyebrow">
+    {{ languageService.language() === 'it' ? 'COMPETENZE' : 'SKILLS' }}
+  </p>
+
+  <h2>
+    {{ languageService.language() === 'it' ? 'Tecnologie che utilizzo' : 'Technologies I use' }}
+  </h2>
+
+  <div class="skills-grid">
+    @for (group of skillGroups; track group.title) {
+      <article class="skill-card">
+        <h3>{{ group.title }}</h3>
+
+        <div class="skill-list">
+          @for (skill of group.skills; track skill) {
+            <span class="skill-tag">{{ skill }}</span>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>

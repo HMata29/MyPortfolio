@@ -1,0 +1,167 @@
+<section id="esperienza" class="container section">
+  <p class="eyebrow">
+    {{ languageService.language() === 'it' ? 'PERCORSO PROFESSIONALE' : 'CAREER JOURNEY' }}
+  </p>
+
+  <h2>
+    {{ languageService.language() === 'it' ? 'La mia esperienza' : 'My Experience' }}
+  </h2>
+
+  <p class="section-description">
+    {{
+      languageService.language() === 'it'
+        ? 'Il mio percorso nello sviluppo software, tra progetti enterprise e crescita professionale.'
+        : 'My journey in software development, working on enterprise projects and growing professionally.'
+    }}
+  </p>
+
+  <div class="timeline">
+    <!-- NTT DATA -->
+    <article class="experience-card">
+      <div class="experience-marker"></div>
+
+      <div class="experience-header">
+        <div>
+          <h3>Software Engineer Junior</h3>
+          <p class="company">NTT DATA</p>
+        </div>
+
+        <span class="experience-period">
+          {{ languageService.language() === 'it' ? 'Marzo 2024 — Presente' : 'March 2024 — Present' }}
+        </span>
+      </div>
+
+      <p class="experience-description">
+        {{
+          languageService.language() === 'it'
+            ? 'Sviluppo e manutenzione di applicazioni enterprise in ambito banking, lavorando su funzionalità backend e frontend.'
+            : 'Development and maintenance of enterprise applications in the banking sector, working on both backend and frontend features.'
+        }}
+      </p>
+
+      <ul>
+        <li>
+          {{
+            languageService.language() === 'it'
+              ? 'Sviluppo backend con Java, Spring Boot e JPA.'
+              : 'Backend development using Java, Spring Boot and JPA.'
+          }}
+        </li>
+
+        <li>
+          {{
+            languageService.language() === 'it'
+              ? 'Realizzazione e integrazione di API REST.'
+              : 'Development and integration of REST APIs.'
+          }}
+        </li>
+
+        <li>
+          {{
+            languageService.language() === 'it'
+              ? 'Gestione database Oracle e query SQL.'
+              : 'Oracle database management and SQL queries.'
+          }}
+        </li>
+
+        <li>
+          {{
+            languageService.language() === 'it'
+              ? 'Sviluppo frontend con Angular e TypeScript.'
+              : 'Frontend development using Angular and TypeScript.'
+          }}
+        </li>
+
+        <li>
+          {{
+            languageService.language() === 'it'
+              ? 'Test unitari con JUnit e Mockito.'
+              : 'Unit testing with JUnit and Mockito.'
+          }}
+        </li>
+
+        <li>
+          {{
+            languageService.language() === 'it'
+              ? 'Analisi bug, code review e supporto alle attività di collaudo.'
+              : 'Bug analysis, code reviews and support for testing activities.'
+          }}
+        </li>
+      </ul>
+
+      <div class="tags">
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>Angular</span>
+        <span>Oracle</span>
+        <span>JUnit</span>
+      </div>
+    </article>
+
+    <!-- BEST ENGAGE -->
+    <article class="experience-card">
+      <div class="experience-marker"></div>
+
+      <div class="experience-header">
+        <div>
+          <h3>Backend Developer</h3>
+          <p class="company">Best Engage</p>
+        </div>
+
+        <span class="experience-period">
+          {{ languageService.language() === 'it' ? 'Esperienza precedente' : 'Previous Experience' }}
+        </span>
+      </div>
+
+      <p class="experience-description">
+        {{
+          languageService.language() === 'it'
+            ? "Esperienza nello sviluppo backend di applicazioni e servizi, con focus sulla gestione dei dati e sull'integrazione tra sistemi."
+            : 'Experience in backend development of applications and services, focusing on data management and system integration.'
+        }}
+      </p>
+
+      <ul>
+        <li>
+          {{
+            languageService.language() === 'it'
+              ? 'Sviluppo di servizi backend in Java.'
+              : 'Backend service development using Java.'
+          }}
+        </li>
+
+        <li>
+          {{
+            languageService.language() === 'it'
+              ? 'Utilizzo di JPA e Hibernate.'
+              : 'Use of JPA and Hibernate.'
+          }}
+        </li>
+
+        <li>
+          {{
+            languageService.language() === 'it'
+              ? 'Scrittura e gestione di query MySQL.'
+              : 'Writing and managing MySQL queries.'
+          }}
+        </li>
+
+        <li>
+          {{
+            languageService.language() === 'it'
+              ? 'Realizzazione di API REST e microservizi.'
+              : 'Development of REST APIs and microservices.'
+          }}
+        </li>
+      </ul>
+
+      <div class="tags">
+        <span>Java</span>
+        <span>JPA</span>
+        <span>Hibernate</span>
+        <span>MySQL</span>
+        <span>REST</span>
+      </div>
+    </article>
+  </div>
+</section>

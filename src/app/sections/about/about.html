@@ -1,0 +1,26 @@
+
+<section id="about" class="container section">
+  <p class="eyebrow">
+    {{ languageService.language() === 'it' ? 'CHI SONO' : 'ABOUT ME' }}
+  </p>
+
+  <h2>
+    {{ languageService.language() === 'it' ? 'Un po’ di me' : 'A little about me' }}
+  </h2>
+
+  <p class="about-text">
+    {{
+      languageService.language() === 'it'
+        ? 'Sono un Software Engineer Junior con esperienza nello sviluppo di applicazioni enterprise. Lavoro principalmente con Java, Spring Boot, Angular e database SQL.'
+        : 'I am a Junior Software Engineer with experience in enterprise application development. I mainly work with Java, Spring Boot, Angular and SQL databases.'
+    }}
+  </p>
+
+  <p class="about-text">
+    {{
+      languageService.language() === 'it'
+        ? 'Mi piace approfondire nuove tecnologie, migliorare la qualità del codice e sviluppare progetti personali, soprattutto nell’ambito dell’intelligenza artificiale.'
+        : 'I enjoy exploring new technologies, improving code quality and building personal projects, especially in the field of artificial intelligence.'
+    }}
+  </p>
+</section>

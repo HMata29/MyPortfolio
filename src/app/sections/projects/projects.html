@@ -1,0 +1,79 @@
+
+<section id="progetti" class="container section"appScrollReveal>
+  <p class="eyebrow">PORTFOLIO</p>
+
+  <h2>
+    {{ languageService.language() === 'it' ? 'I miei progetti' : 'My projects' }}
+  </h2>
+
+  <p class="projects-intro">
+    {{
+      languageService.language() === 'it'
+        ? 'Una selezione dei miei progetti personali e repository pubblici.'
+        : 'A selection of my personal projects and public repositories.'
+    }}
+  </p>
+
+  @if (loading()) {
+    <p class="status-message">
+      {{ languageService.language() === 'it' ? 'Caricamento progetti...' : 'Loading projects...' }}
+    </p>
+  }
+
+  @if (error()) {
+    <p class="status-message">
+      {{
+        languageService.language() === 'it'
+          ? 'Non è stato possibile caricare i progetti da GitHub.'
+          : 'Could not load projects from GitHub.'
+      }}
+    </p>
+  }
+
+  @if (!loading() && !error()) {
+    <div class="projects-grid">
+      @for (repo of repositories(); track repo.id) {
+        <article
+          class="project-card"
+          [class.featured]="repo.name.toLowerCase() === 'myportfolio'">
+
+          @if (repo.name.toLowerCase() === 'myportfolio') {
+            <span class="featured-badge">
+              {{ languageService.language() === 'it' ? 'In evidenza' : 'Featured' }}
+            </span>
+          }
+
+          <div class="project-header">
+            <span class="project-icon">⌘</span>
+          </div>
+
+          <h3>{{ repo.name }}</h3>
+
+          <p class="project-description">
+            {{
+              repo.description ||
+              (languageService.language() === 'it'
+                ? 'Repository GitHub personale.'
+                : 'Personal GitHub repository.')
+            }}
+          </p>
+
+          <div class="project-footer">
+            <span class="project-language">
+              <span class="language-dot"></span>
+              {{ repo.language || 'Other' }}
+            </span>
+
+            <a
+              [href]="repo.html_url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link">
+              {{ languageService.language() === 'it' ? 'Vedi repository ↗' : 'View repository ↗' }}
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+  }
+</section>

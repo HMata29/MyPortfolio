@@ -1,0 +1,36 @@
+
+<section id="contatti" class="container section">
+  <div class="contact-card">
+    <p class="eyebrow">
+      {{ languageService.language() === 'it' ? 'LET’S CONNECT' : 'LET’S CONNECT' }}
+    </p>
+
+    <h2>
+      {{
+        languageService.language() === 'it'
+          ? 'Hai un progetto interessante?'
+          : 'Have an interesting project?'
+      }}
+    </h2>
+
+    <p class="contact-description">
+      {{
+        languageService.language() === 'it'
+          ? 'Sono aperto a nuove opportunità professionali e collaborazioni. Parliamone!'
+          : "I'm open to new professional opportunities and collaborations. Let's talk!"
+      }}
+    </p>
+
+    <div class="contact-actions">
+      <a
+        href="mailto:hamatamorosa@gmail.com"
+        class="btn btn-primary">
+        {{
+          languageService.language() === 'it'
+            ? 'Contattami via email ↗'
+            : 'Contact me via email ↗'
+        }}
+      </a>
+    </div>
+  </div>
+</section>

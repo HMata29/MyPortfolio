@@ -1,31 +1,102 @@
+
 <header class="container header">
-  <a href="#top" class="logo">H. Matamorosa</a>
-  <nav class="nav">
-    <a href="#about">Chi sono</a>
-    <a href="#progetti">Progetti</a>
-    <a href="#esperienza">Esperienza</a>
-    <a href="#contatti">Contatti</a>
+  <a href="#top" class="logo" (click)="menuOpen.set(false)">
+    H. Matamorosa
+  </a>
+
+  <button
+    type="button"
+    class="menu-toggle"
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="menuOpen()"
+    aria-label="Apri o chiudi il menu">
+    {{ menuOpen() ? '✕' : '☰' }}
+  </button>
+
+  <nav class="nav" [class.nav-open]="menuOpen()">
+    <a href="#about" (click)="menuOpen.set(false)">
+      {{ languageService.language() === 'it' ? 'Chi sono' : 'About' }}
+    </a>
+
+    <a href="#skills" (click)="menuOpen.set(false)">
+      {{ languageService.language() === 'it' ? 'Competenze' : 'Skills' }}
+    </a>
+
+    <a href="#progetti" (click)="menuOpen.set(false)">
+      {{ languageService.language() === 'it' ? 'Progetti' : 'Projects' }}
+    </a>
+
+    <a href="#esperienza" (click)="menuOpen.set(false)">
+      {{ languageService.language() === 'it' ? 'Esperienza' : 'Experience' }}
+    </a>
+
+    <!-- <a href="#contatti" (click)="menuOpen.set(false)">
+      {{ languageService.language() === 'it' ? 'Contatti' : 'Contact' }}
+    </a> -->
+
     <button
       type="button"
-      class="theme-toggle"
+      class="theme-switch"
       (click)="themeService.toggle()"
-      [attr.aria-label]="themeService.theme() === 'dark' ? 'Passa al tema chiaro' : 'Passa al tema scuro'">
-      {{ themeService.theme() === 'dark' ? 'Chiaro' : 'Scuro' }}
+      [attr.aria-label]="themeService.theme() === 'dark' ? 'Attiva tema chiaro' : 'Attiva tema scuro'"
+      [attr.aria-pressed]="themeService.theme() === 'dark'">
+
+      <span class="theme-switch-icon sun">☀</span>
+      <span class="theme-switch-icon moon">☾</span>
+
+      <span
+        class="theme-switch-thumb"
+        [class.thumb-dark]="themeService.theme() === 'dark'">
+      </span>
+    </button>
+
+    <button
+      type="button"
+      class="language-toggle"
+      (click)="languageService.toggle()">
+      {{ languageService.language() === 'it' ? '🇮🇹 IT' : '🇬🇧 EN' }}
     </button>
   </nav>
 </header>
 
 <main>
   <section id="top" class="container hero">
-    <p class="eyebrow">Software Engineer · Milano</p>
-    <h1>Costruisco software solido, dal backend Java al frontend Angular.</h1>
-    <p class="lead">
-      Software Engineer a Milano. Sviluppo applicazioni enterprise con Java, Spring Boot e Angular,
-      e nel tempo libero costruisco progetti personali con l’AI.
+    <p class="eyebrow">
+      SOFTWARE ENGINEER
     </p>
+
+    <h1>
+      {{
+        languageService.language() === 'it'
+          ? 'Costruisco software solido, dal backend Java al frontend Angular.'
+          : 'I build reliable software, from Java backend to Angular frontend.'
+      }}
+    </h1>
+
+    <p class="lead">
+      {{
+        languageService.language() === 'it'
+          ? 'Sono un Software Engineer. Sviluppo applicazioni enterprise con Java, Spring Boot e Angular, e nel tempo libero costruisco progetti personali con l’AI.'
+          : 'I am a Software Engineer. I develop enterprise applications with Java, Spring Boot and Angular, and build personal AI projects in my free time.'
+      }}
+    </p>
+
     <div class="actions">
-      <a href="#progetti" class="btn btn-primary">Vedi i progetti</a>
-      <a href="#contatti" class="btn btn-outline">Contattami</a>
+      <a href="#progetti" class="btn btn-primary">
+        {{ languageService.language() === 'it' ? 'Vedi i progetti' : 'View projects' }}
+      </a>
+
+      <a href="#contatti" class="btn btn-outline">
+        {{ languageService.language() === 'it' ? 'Contattami' : 'Contact me' }}
+      </a>
     </div>
   </section>
+
+  <app-about></app-about>
+  <app-skills></app-skills>
+  <app-projects></app-projects>
+  <app-experience></app-experience>
+  <app-contact></app-contact>
 </main>
+
+<app-footer></app-footer>
